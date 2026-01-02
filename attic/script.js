@@ -45,8 +45,7 @@ const app = {
             });
         }
         
-        this.renderTopNav(); // Call new nav renderer
-        this.initSearch();   // Initialize search engine
+        this.renderMasterNav();
         this.loadPage(this.currentPage);
     },
 
@@ -65,47 +64,6 @@ const app = {
             };
             li.appendChild(a);
             list.appendChild(li);
-        });
-    },
-
-    renderTopNav: function() {
-        const container = document.getElementById('top-nav-items');
-        container.innerHTML = '';
-        Object.keys(this.pages).forEach(id => {
-            const item = document.createElement('a');
-            item.className = 'dropdown-item';
-            item.textContent = this.pages[id].title;
-            item.onclick = () => this.loadPage(id);
-            container.appendChild(item);
-        });
-    },
-
-    initSearch: function() {
-        const input = document.getElementById('site-search');
-        const results = document.getElementById('search-results');
-
-        input.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
-            if (query.length < 2) { results.style.display = 'none'; return; }
-
-            const hits = Object.keys(this.pages).filter(id => 
-                this.pages[id].title.toLowerCase().includes(query) || 
-                this.pages[id].subtitle.toLowerCase().includes(query)
-            );
-
-            if (hits.length > 0) {
-                results.innerHTML = hits.map(id => 
-                    `<div class="dropdown-item" onclick="app.loadPage('${id}')">${this.pages[id].title}</div>`
-                ).join('');
-                results.style.display = 'block';
-            } else {
-                results.style.display = 'none';
-            }
-        });
-
-        // Close results when clicking away
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.search-bar')) results.style.display = 'none';
         });
     },
 
@@ -167,24 +125,29 @@ const app = {
         const page = this.pages[id];
         const main = document.getElementById('main-content');
         
-        // Hide search results on navigate
-    document.getElementById('search-results').style.display = 'none';
+        document.getElementById('page-header-title').textContent = page.title;
+        this.renderMasterNav(); 
 
-    main.innerHTML = `
-        <h1 class="dynamic-title">${page.title}</h1>
-        <p class="subtitle">${page.subtitle}</p>
-        <div id="page-body">Loading...</div>
-    `;
-    
-    const body = document.getElementById('page-body');
-    const rawContent = await this.getContent(page.url);
+        main.innerHTML = `<p class="subtitle">${page.subtitle}</p><div id="page-body">Loading content...</div>`;
+        const body = document.getElementById('page-body');
 
-    body.innerHTML = page.type === "markdown" ? 
-        `<div class="md-container">${marked.parse(rawContent)}</div>` : 
-        `<div class="pure-html-section">${rawContent}</div>`;
+        const rawContent = await this.getContent(page.url);
 
-    this.generateNavigation();
-    main.scrollTo(0, 0);
+        /**
+         * HYBRID HANDLING LOGIC:
+         * If the type is "markdown", Marked.js will parse the MD 
+         * and leave the HTML tags as they are.
+         */
+        if (page.type === "markdown") {
+            // marked.parse handles raw HTML by default
+            body.innerHTML = `<div class="md-container">${marked.parse(rawContent)}</div>`;
+        } else {
+            // pure-html-section handles non-markdown files
+            body.innerHTML = `<div class="pure-html-section">${rawContent}</div>`;
+        }
+
+        // Always run ToC generation after content is injected
+        this.generateNavigation();
     },
 
     generateNavigation: function() {

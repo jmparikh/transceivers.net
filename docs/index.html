@@ -12,31 +12,42 @@
 
 </head>
 <body>
-
     <header>
-        <h1 id="page-header-title">Engineering Portal</h1>
-    </header>
-
-    <div class="container">
-        <nav>
-            <div id="master-panel" class="nav-section">
-                <h4>Project Pages</h4>
-                <ul id="master-nav" class="nav-list">
-                    <!-- Populated by JS -->
-                </ul>
-            </div>
-            <div id="toc-panel" class="nav-section">
-                <h4>On This Page</h4>
-                <ul id="auto-nav" class="nav-list">
-                    <!-- Populated automatically -->
-                </ul>
-            </div>
-        </nav>
-
-        <main id="main-content">
-            <!-- Dynamic Content Injected Here -->
-        </main>
+    <div class="header-left">
+        <div class="site-logo" onclick="app.loadPage('home')">TRANSCEIVERS.NET</div>
+        
+        <div class="top-nav-dropdown">
+            <button class="drop-btn">Explore Pages ▼</button>
+            <div id="top-nav-items" class="dropdown-content">
+                </div>
+        </div>
     </div>
+
+    <div class="header-right">
+        <div class="search-bar">
+            <input type="text" id="site-search" placeholder="Search pages..." autocomplete="off">
+            <div id="search-results" class="search-results-popup"></div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <nav>
+        <div id="status-panel" class="nav-section">
+            <h4>Environment Stats</h4>
+            <div class="status-card">
+                <div class="status-row"><span>Status:</span> <span class="tag-green">Online</span></div>
+                <div class="status-row"><span>Version:</span> <strong>1.0.4-b</strong></div>
+                <div class="status-row"><span>Last Update:</span> 2 mins ago</div>
+            </div>
+        </div>
+        <div id="toc-panel" class="nav-section">
+            <h4>On This Page</h4>
+            <ul id="auto-nav" class="nav-list"></ul>
+        </div>
+    </nav>
+    <main id="main-content"></main>
+</div>
 
 </body>
 </html>
