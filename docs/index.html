@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Portal | Multi-Page Engine</title>
+    <title>transceivers.net | Layer 1 of the OSI</title>
     
     <!-- External Dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
@@ -13,22 +13,21 @@
 </head>
 <body>
     <header>
-    <div class="header-left">
-        <div class="site-logo" onclick="app.loadPage('home')">TRANSCEIVERS.NET</div>
-        
-        <div class="top-nav-dropdown">
-            <button class="drop-btn">Explore Pages ▼</button>
-            <div id="top-nav-items" class="dropdown-content">
-                </div>
+    <div class="header-main-row">
+        <div class="header-left">
+            <div class="site-logo" onclick="app.loadPage('home')">TRANSCEIVERS.NET | Layer 1 of the OSI</div>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <input type="text" id="site-search" placeholder="Search pages..." autocomplete="off">
+                <div id="search-results" class="search-results-popup"></div>
+            </div>
         </div>
     </div>
 
-    <div class="header-right">
-        <div class="search-bar">
-            <input type="text" id="site-search" placeholder="Search pages..." autocomplete="off">
-            <div id="search-results" class="search-results-popup"></div>
-        </div>
-    </div>
+    <nav class="nav-bar-strip">
+        <ul id="top-nav-items" class="horizontal-nav-list"> </ul>
+    </nav>
 </header>
 
 <div class="container">
@@ -37,7 +36,7 @@
             <h4>Environment Stats</h4>
             <div class="status-card">
                 <div class="status-row"><span>Status:</span> <span class="tag-green">Online</span></div>
-                <div class="status-row"><span>Version:</span> <strong>1.0.4-b</strong></div>
+                <div class="status-row"><span>Version:</span> <strong>0.0.1</strong></div>
                 <div class="status-row"><span>Last Update:</span> 2 mins ago</div>
             </div>
         </div>
@@ -48,6 +47,14 @@
     </nav>
     <main id="main-content"></main>
 </div>
+
+<footer class="site-footer">
+        <div class="footer-content">
+            <span class="footer-credits">© 2026 transceivers.net | Layer 1 Documentation Portal</span>
+            <span class="footer-text">Built with Project Portal Engine v1.0.4-b</span>
+            <span class="footer-credits">Created by Jainam Parikh and w/some AI help :)</span>
+        </div>
+    </footer>
 
 </body>
 </html>

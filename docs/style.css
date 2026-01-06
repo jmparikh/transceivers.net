@@ -18,18 +18,125 @@ body {
 }
 
 header {
-    height: 60px;
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--border-color);
-    background: #fff;
-    flex-shrink: 0;
+    height: auto; /* Allow height to grow based on two rows */
+    flex-direction: column; 
+    padding: 0; /* Remove header padding so rows span full width */
 }
 
-header h1 { margin: 0; font-size: 1.25rem; }
+.header-main-row {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 2rem 0 2rem; /* Added 4px at the top */
+}
 
-.container { display: flex; flex: 1; overflow: hidden; }
+/* THE NEW NAV BAR STRIP */
+.nav-bar-strip {
+    width: 100%;
+    background: var(--bg-gray);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color); /* Added for clear separation */
+    padding: 0 3rem;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.horizontal-nav-list {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem; /* Tighter gap because buttons have internal padding */
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Take full height of parent to allow internal centering */
+    align-items: center; /* Vertically centers the LI items */
+}
+
+/* The Parent Dropdown Container */
+.nav-group {
+    position: relative;
+    display: flex;
+    align-items: center; /* Centers the button inside the LI */
+    height: 100%;
+}
+
+/* The Trigger Button */
+.nav-dropbtn {
+    background: none;
+    border: none;
+    padding: 0 15px;
+    height: 32px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.nav-dropbtn:hover {
+    background: var(--hover-bg);
+    color: var(--primary-blue);
+}
+
+/* The Hidden Menu */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 0 0 6px 6px;
+    z-index: 2000;
+    padding: 0.5rem 0;
+}
+
+/* Show menu on hover */
+.nav-group:hover .dropdown-content {
+    display: block;
+}
+
+/* Style for the links in the new bar */
+.nav-bar-link {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.nav-bar-link:hover {
+    background: var(--hover-bg);
+    color: var(--primary-blue);
+}
+
+.nav-bar-link.active {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    height: calc(100vh - 100px);
+}
 
 /* Sidebar Split Layout */
 nav {
@@ -65,7 +172,11 @@ nav h4 {
     margin: 0 0 0.75rem 0.5rem;
 }
 
-.nav-list { list-style: none; padding: 0; margin: 0; }
+.nav-list { 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
 /* Nav Items */
 .nav-item {
@@ -84,8 +195,17 @@ nav h4 {
     transition: background 0.2s;
 }
 
-.nav-link:hover { background: var(--hover-bg); color: var(--primary-blue); }
-.nav-link.active { background: #fff; color: var(--primary-blue); font-weight: 600; border: 1px solid var(--border-color); }
+.nav-link:hover {
+    background: var(--hover-bg);
+    color: var(--primary-blue);
+}
+
+.nav-link.active {
+    background: #fff;
+    color: var(--primary-blue);
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+}
 
 /* Collapse/Expand Logic Styles */
 .toc-node {
@@ -106,7 +226,9 @@ nav h4 {
     color: #57606a;
 }
 
-.toggle-btn:hover { background: rgba(0,0,0,0.05); }
+.toggle-btn:hover {
+    background: rgba(0,0,0,0.05);
+}
 
 .toggle-btn svg {
     width: 12px;
@@ -115,8 +237,13 @@ nav h4 {
 }
 
 /* State: Collapsed */
-.collapsed .toggle-btn svg { transform: rotate(-90deg); }
-.collapsed .sub-nav { display: none; }
+.collapsed .toggle-btn svg {
+    transform: rotate(-90deg);
+}
+
+.collapsed .sub-nav {
+    display: none;
+}
 
 .sub-nav {
     list-style: none;
@@ -124,20 +251,38 @@ nav h4 {
     margin: 0;
 }
 
-/* Main Content Area */
-main { 
-    flex: 1; 
-    padding: 2.5rem 4rem; 
-    overflow-y: auto; 
-    scroll-behavior: smooth;
+.md-container, .pure-html-section {
+    line-height: 1.6;
+    max-width: 99%;
+    text-align: justify;
+    hyphens: auto;
 }
 
-.md-container, .pure-html-section { line-height: 1.6; max-width: 850px; }
 .md-container code, .pure-html-section code {
     background: rgba(175, 184, 193, 0.2);
     padding: 0.2rem 0.4rem;
     border-radius: 6px;
     font-size: 85%;
+}
+
+.pure-html-section h1, 
+.pure-html-section h2, 
+.pure-html-section h3, 
+.pure-html-section h4 {
+    text-align: left;
+}
+
+.pure-html-section pre, 
+.pure-html-section code {
+    text-align: left;
+    white-space: pre-wrap; /* Ensures long code lines wrap within the 1100px */
+}
+
+.pure-html-section img, 
+.pure-html-section table {
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
 }
 
 @media (max-width: 900px) {
@@ -148,7 +293,7 @@ main {
 
 /* --- Header Layout Updates --- */
 header {
-    height: 50px; /* Slimmer header */
+    height: 90px; /* Slimmer header */
     padding: 0 1rem; /* Reduced gutter */
     display: flex;
     justify-content: space-between; /* Separates title and nav */
@@ -188,9 +333,11 @@ header {
 
 main { 
     flex: 1; 
-    padding: 1.5rem 2rem; /* Reduced from 2.5rem 4rem */
+    padding: 1.5rem 1rem; /* Reduced from 2.5rem 4rem */
     overflow-y: auto; 
     scroll-behavior: smooth;
+    width: 100%;
+    flex-grow: 1;
 }
 
 .md-container h1 {
@@ -201,26 +348,40 @@ main {
 }
 
 /* Ensure sidebar width remains consistent */
-nav { width: 240px; } /* Slightly narrower sidebar */
-
-
+nav {
+    width: 240px;
+} /* Slightly narrower sidebar */
 
 /* --- New Top Nav & Search Styles --- */
-.header-left { display: flex; align-items: center; gap: 2rem; }
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
 
-.top-nav-dropdown { position: relative; }
-.drop-btn { 
-    background: none; border: 1px solid var(--border-color); padding: 5px 12px;
-    border-radius: 6px; font-size: 0.85rem; cursor: pointer; color: var(--text-main);
+.dropdown-item {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: block;
+    color: var(--text-main);
+    text-decoration: none;
 }
-.dropdown-content {
-    display: none; position: absolute; top: 100%; left: 0; background: white;
-    min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border: 1px solid var(--border-color);
-    border-radius: 6px; z-index: 2000; padding: 0.5rem 0;
+
+.dropdown-item:hover {
+    background: var(--hover-bg);
+    color: var(--primary-blue);
 }
-.top-nav-dropdown:hover .dropdown-content { display: block; }
-.dropdown-item { padding: 8px 16px; font-size: 0.85rem; cursor: pointer; display: block; color: var(--text-main); text-decoration: none; }
-.dropdown-item:hover { background: var(--hover-bg); color: var(--primary-blue); }
+
+.dropdown-item.active {
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.arrow {
+    font-size: 0.6rem;
+    opacity: 0.6;
+}
 
 .search-bar { position: relative; }
 #site-search { 
@@ -228,15 +389,87 @@ nav { width: 240px; } /* Slightly narrower sidebar */
     padding: 6px 12px; border-radius: 6px; width: 220px; font-size: 0.85rem;
 }
 .search-results-popup {
-    position: absolute; top: 110%; right: 0; background: white; width: 220px;
-    border: 1px solid var(--border-color); border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    display: none; z-index: 2000;
+    position: absolute;
+    top: 110%; right: 0;
+    background: white;
+    width: 220px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 2000;
 }
 
 /* --- Repurposed Sidebar Stats --- */
-.status-card { 
-    background: white; border: 1px solid var(--border-color); 
-    border-radius: 6px; padding: 10px; font-size: 0.75rem; 
+.status-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 0.75rem;
 }
-.status-row { display: flex; justify-content: space-between; margin-bottom: 5px; color: var(--text-main); }
-.tag-green { color: #1a7f37; background: #dafbe1; padding: 1px 6px; border-radius: 10px; font-weight: bold; }
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    color: var(--text-main);
+}
+
+.tag-green {
+    color: #1a7f37;
+    background: #dafbe1;
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.dynamic-title {
+    margin-bottom: 0px;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    max-width: none;
+}
+
+.subtitle {
+    margin-top: 5px; /* Adjust this value until the gap looks right to you */
+    color: var(--text-light);
+    font-size: 0.9rem;
+    max-width: none;
+}
+
+/* --- Footer Styles --- */
+.site-footer {
+    height: 35px; /* Fixed height for the bottom bar */
+    background: var(--bg-gray);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    flex-shrink: 0; /* Prevents the footer from squishing */
+    z-index: 1000;
+}
+
+.footer-content {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-credits, .footer-text {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    letter-spacing: 0.02em;
+}
+
+/* --- REVISE CONTAINER HEIGHT --- */
+/* Adjust the math: 50px (Header Top) + 40px (Nav Strip) + 35px (Footer) = 125px */
+.container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    height: calc(100vh - 125px);
+    flex-direction: row;
+}

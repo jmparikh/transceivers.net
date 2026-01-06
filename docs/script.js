@@ -9,24 +9,47 @@ const app = {
     // Config: Defines page metadata. 
     pages: {
         home: {
-            title: "Architecture & Core",
-            subtitle: "System overview and structural guidelines.",
+            title: "What are transceivers?",
+            subtitle: "A - Z of optics",
             type: "markdown", // Treat as Markdown; Marked.js handles embedded HTML automatically
             url: "./home.md" 
         },
-        specs: {
-            title: "Technical Specs",
-            subtitle: "Deep dive into API and Database schemas.",
+        types_t: {
+            title: "Types of Transceivers",
+            subtitle: "Deep dive into the types of transceivers.",
             type: "markdown",
-            url: "./specs.md"
+            url: "./types-t.md"
         },
-        setup: {
-            title: "Setup Guide",
-            subtitle: "Instructions for local development.",
-            type: "html",
-            url: "./setup.html"
+        types_cables: {
+            title: "Types of Cables",
+            subtitle: "Deep dive into the sea of cables, you see what I did there ;)",
+            type: "markdown",
+            url: "./types-cables.md"
+        },
+        types_conn: {
+            title: "Types of Connectors",
+            subtitle: "Deep dive into the types of connectors.",
+            type: "markdown",
+            url: "./types-conn.md"
         }
+        // types_cables: {
+        //     title: "Types of Cables",
+        //     subtitle: "Deep dive into the types of cables.",
+        //     type: "html",
+        //     url: "./types-c.md"
+        // }
     },
+
+    navigation: [
+        { 
+            label: "The ABCs", 
+            links: ['home'] // These ids must match the keys in app.pages
+        },
+        { 
+            label: "Types of L1 Media", 
+            links: ['types_t', 'types_cables', 'types_conn'] 
+        }
+    ],
 
     // Navigation filtering
     config: {
@@ -70,13 +93,40 @@ const app = {
 
     renderTopNav: function() {
         const container = document.getElementById('top-nav-items');
+        if (!container) return;
         container.innerHTML = '';
-        Object.keys(this.pages).forEach(id => {
-            const item = document.createElement('a');
-            item.className = 'dropdown-item';
-            item.textContent = this.pages[id].title;
-            item.onclick = () => this.loadPage(id);
-            container.appendChild(item);
+
+        this.navigation.forEach(group => {
+            const li = document.createElement('li');
+            li.className = 'nav-group';
+            
+            // Create the Parent Button (Dropdown trigger)
+            const btn = document.createElement('button');
+            btn.className = 'nav-dropbtn';
+            btn.innerHTML = `${group.label} <span class="arrow">▼</span>`;
+            
+            // Create the Dropdown Content container
+            const dropdownDiv = document.createElement('div');
+            dropdownDiv.className = 'dropdown-content';
+
+            // Add the specific links assigned to this group
+            group.links.forEach(pageId => {
+                const page = this.pages[pageId];
+                if (!page) return;
+
+                const a = document.createElement('a');
+                a.className = `dropdown-item ${this.currentPage === pageId ? 'active' : ''}`;
+                a.textContent = page.title;
+                a.onclick = (e) => {
+                    e.preventDefault();
+                    this.loadPage(pageId);
+                };
+                dropdownDiv.appendChild(a);
+            });
+
+            li.appendChild(btn);
+            li.appendChild(dropdownDiv);
+            container.appendChild(li);
         });
     },
 
@@ -164,6 +214,7 @@ const app = {
 
     loadPage: async function(id) {
         this.currentPage = id;
+            this.renderTopNav();
         const page = this.pages[id];
         const main = document.getElementById('main-content');
         
@@ -182,6 +233,19 @@ const app = {
     body.innerHTML = page.type === "markdown" ? 
         `<div class="md-container">${marked.parse(rawContent)}</div>` : 
         `<div class="pure-html-section">${rawContent}</div>`;
+
+    const contentLinks = main.querySelectorAll('a');
+    contentLinks.forEach(link => {
+        const destination = link.getAttribute('href');
+        
+        // If the href matches one of your page IDs (e.g., 'setup', 'specs')
+        if (this.pages[destination]) {
+            link.onclick = (e) => {
+                e.preventDefault(); // Stop the '#' or refresh
+                this.loadPage(destination);
+            };
+        }
+    });
 
     this.generateNavigation();
     main.scrollTo(0, 0);
