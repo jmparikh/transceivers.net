@@ -7,11 +7,11 @@ MPO APC, UPC, etc.. FINISH THIS
     <thead>
         <tr style="background-color: #f2f2f2;">
         <th style="border: 1px solid #ddd; padding: 5px; text-align: left; width: 15%;">Connector Type</th>
-        <th style="border: 1px solid #ddd; padding: 5px; text-align: left; width: 20%;">Connector Contact <sup>+</sup></th>
+        <th style="border: 1px solid #ddd; padding: 5px; text-align: left; width: 18%;">Connector Contact <sup>+</sup></th>
         <th style="border: 1px solid #ddd; padding: 5px; text-align: left;"># of Pins</th>
         <th style="border: 1px solid #ddd; padding: 5px; text-align: left;">Description</th>
-        <th style="border: 1px solid #ddd; padding: 5px; text-align: left;">Used in</th>
-        <th style="border: 1px solid #ddd; padding: 5px; text-align: left;">Color</th>
+        <th style="border: 1px solid #ddd; padding: 5px; text-align: left; width: 3%">Used in</th>
+        <th style="border: 1px solid #ddd; padding: 5px; text-align: left; width: 10%">Color</th>
         </tr>
     </thead>
     <tbody>
@@ -21,13 +21,12 @@ MPO APC, UPC, etc.. FINISH THIS
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>1</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">High-density connections, SFP/SFP+/XFP transceivers. Duplex LC is comparable in size to RJ-45.</td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
-            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td rowspan="7" style="border: 1px solid #ddd; padding: 5px;">Depends on what connector is used with what kind of cable. Refer to [Types of Cables](types_cables) for mor detals about per-cable/connector color</td>
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>Duplex LC</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>-</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>2</strong></td>
-            <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
         </tr>
@@ -37,35 +36,25 @@ MPO APC, UPC, etc.. FINISH THIS
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>1</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">Datacom and telecom (most widely deployed)</td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
-            <td style="border: 1px solid #ddd; padding: 5px;"></td>
         </tr>
         <tr>
-            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong><sup>*</sup>MPO/MTP12</strong><br>Multiple Fiber Push-On</td>
-            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>APC</strong><br>Angled Polished Connector<br>Has an 8° angle, to help reduce back reflection.</td>
-            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>12</strong></td>
-            <td style="border: 1px solid #ddd; padding: 5px;">SM or MM multi-fiber ribbon. Same ferrule<sup>++</sup> as MT, but more easily reconnectable. Used for indoor cabling and device interconnections. MTP is a brand name for an improved connector, which intermates with MPO.</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">SMF</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">Green strain relief boot, or a green connector body.</td>
+            <td rowspan="4" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong><sup>*</sup><span id="mpo-mtp">MPO/MTP</span></strong><br>Multiple Fiber Push-On</td>
+            <td rowspan="4" style="border: 1px solid #ddd; padding: 5px; vertical-align: top; text-align: left"><strong>APC</strong> - Angled Polished/Physical Connector<br>Has an 8° angle, to help reduce back reflection.<br><br><strong>UPC</strong> - Ultra Polished/Physical Connector </td> 
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>8</strong></td>
+            <td style="border: 1px solid #ddd; padding: 5px;">Can transmit the same data rates as 12-fiber cables with lower cost and insertion loss, making them more cost-effective.</td>
+            <td rowspan="4" style="border: 1px solid #ddd; padding: 5px;">SMF (<b><a href="#" onclick="app.loadPage('types_cables', 'os2'); return false;">OS2</a></b>)<br><br>MMF (<b><a href="#" onclick="app.loadPage('types_cables', 'om1'); return false;">OM1</a></b>, <b><a href="#" onclick="app.loadPage('types_cables', 'om2'); return false;">OM2</a></b>, <b><a href="#" onclick="app.loadPage('types_cables', 'om3'); return false;">OM3</a></b>, <b><a href="#" onclick="app.loadPage('types_cables', 'om4'); return false;">OM4</a></b>, <b><a href="#" onclick="app.loadPage('types_cables', 'om5'); return false;">OM5</a></b>)</td>
         </tr>
         <tr>
-            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>UPC</strong></td>
-            <td style="border: 1px solid #ddd; padding: 5px;">Ultra Polished Connector</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">MMF</td>
-            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>12</strong></td>
+            <td style="border: 1px solid #ddd; padding: 5px;">These are the earliest developed, most commonly used solution in 10/40/100G connections.<br>If they are used in 40G QSFP+ or 100G QSFP28 transceivers, 4 fibers will be idle, resulting in low fiber utilization.</td>
         </tr>
         <tr>
-            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong><sup>*</sup>MPO/MTP24</strong><br>Multiple Fiber Push-On</td>
-            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>APC</strong><br>Angled Polished Connector<br>Has an 8° angle, to help reduce back reflection.</td>
-            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>24</strong></td>
-            <td style="border: 1px solid #ddd; padding: 5px;"></td>
-            <td style="border: 1px solid #ddd; padding: 5px;"></td>
-            <td style="border: 1px solid #ddd; padding: 5px;">Green strain relief boot, or a green connector body.</td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>16</strong></td>
+            <td style="border: 1px solid #ddd; padding: 5px;">These cables use the same external footprint as traditional 12-fiber MT (mechanically transferable) ferrules, aggregate multiple 8-fiber parallel transceivers, and couple directly to emerging 16-fiber parallel fiber links such as 400G QSFP-DD and OSFP.</td>
         </tr>
         <tr>
-            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>UPC</strong></td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>24</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
-            <td style="border: 1px solid #ddd; padding: 5px;">Ultra Polished Connector</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">MMF</td>
         </tr>
     </tbody>
 </table>

@@ -18,9 +18,15 @@ body {
 }
 
 header {
-    height: auto; /* Allow height to grow based on two rows */
+    height: 90px; /* Allow height to grow based on two rows */
     flex-direction: column; 
-    padding: 0; /* Remove header padding so rows span full width */
+    padding: 0 1rem; /* Remove header padding so rows span full width */
+    display: flex;
+    justify-content: space-between; /* Separates title and nav */
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    background: #fff;
+    flex-shrink: 0;
 }
 
 .header-main-row {
@@ -131,11 +137,14 @@ header h1 {
     font-size: 1.25rem;
 }
 
+/* --- REVISE CONTAINER HEIGHT --- */
+/* Adjust the math: 50px (Header Top) + 40px (Nav Strip) + 35px (Footer) = 125px */
 .container {
     display: flex;
     flex: 1;
     overflow: hidden;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 125px);
+    flex-direction: row;
 }
 
 /* Sidebar Split Layout */
@@ -151,12 +160,6 @@ nav {
 .nav-section {
     padding: 1.5rem 1rem;
     overflow-y: auto;
-}
-
-/* Master Nav (Top Half) */
-#master-panel {
-    height: 40%;
-    border-bottom: 2px solid var(--border-color);
 }
 
 /* ToC Panel (Bottom Half) */
@@ -291,18 +294,6 @@ nav h4 {
     #master-panel, #toc-panel { height: auto; border-bottom: 1px solid var(--border-color); }
 }
 
-/* --- Header Layout Updates --- */
-header {
-    height: 90px; /* Slimmer header */
-    padding: 0 1rem; /* Reduced gutter */
-    display: flex;
-    justify-content: space-between; /* Separates title and nav */
-    align-items: center;
-    border-bottom: 1px solid var(--border-color);
-    background: #fff;
-    flex-shrink: 0;
-}
-
 .site-logo {
     font-weight: 800;
     font-size: 1rem;
@@ -383,11 +374,19 @@ nav {
     opacity: 0.6;
 }
 
-.search-bar { position: relative; }
-#site-search { 
-    background: var(--bg-gray); border: 1px solid var(--border-color); 
-    padding: 6px 12px; border-radius: 6px; width: 220px; font-size: 0.85rem;
+.search-bar {
+    position: relative;
 }
+
+#site-search { 
+    background: var(--bg-gray);
+    border: 1px solid var(--border-color); 
+    padding: 6px 12px;
+    border-radius: 6px;
+    width: 220px;
+    font-size: 0.85rem;
+}
+
 .search-results-popup {
     position: absolute;
     top: 110%; right: 0;
@@ -464,12 +463,30 @@ nav {
     letter-spacing: 0.02em;
 }
 
-/* --- REVISE CONTAINER HEIGHT --- */
-/* Adjust the math: 50px (Header Top) + 40px (Nav Strip) + 35px (Footer) = 125px */
-.container {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-    height: calc(100vh - 125px);
-    flex-direction: row;
+/* Animation for the blinking effect */
+@keyframes highlight-blink {
+    0% { background-color: transparent; }
+    50% { background-color: #ffdf5d; } /* Highlight yellow */
+    100% { background-color: transparent; }
+}
+
+/* Target the element that matches the ID in the URL */
+:target {
+    animation: highlight-blink 0.5s ease-in-out 3; /* Blinks 3 times */
+    padding: 2px 5px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.two-color-cell {
+  /* Use --color1 and --color2 variables. If not provided, it defaults to gray/white */
+  background: linear-gradient(
+    to right, 
+    var(--color1, #ccc) 0%, 
+    var(--color1, #ccc) 50%, 
+    var(--color2, #eee) 50%, 
+    var(--color2, #eee) 100%
+  );
+  height: 50px; 
+  width: 200px;
 }

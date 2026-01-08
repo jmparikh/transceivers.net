@@ -212,43 +212,64 @@ const app = {
         </div>`;
     },
 
-    loadPage: async function(id) {
-        this.currentPage = id;
-            this.renderTopNav();
+    loadPage: async function(id, anchorId = null) {
+        // 1. SAFETY CHECK: Ensure the page exists in your registry
         const page = this.pages[id];
+        if (!page) {
+            console.error(`Page ID "${id}" not found in app.pages`);
+            // Optional: Load a 404 state instead of crashing
+            document.getElementById('main-content').innerHTML = `<h1>404</h1><p>Page not found.</p>`;
+            return; 
+        }
+
+        this.currentPage = id;
+        this.renderTopNav();
         const main = document.getElementById('main-content');
         
         // Hide search results on navigate
-    document.getElementById('search-results').style.display = 'none';
+        document.getElementById('search-results').style.display = 'none';
 
-    main.innerHTML = `
-        <h1 class="dynamic-title">${page.title}</h1>
-        <p class="subtitle">${page.subtitle}</p>
-        <div id="page-body">Loading...</div>
-    `;
+        main.innerHTML = `
+            <h1 class="dynamic-title">${page.title}</h1>
+            <p class="subtitle">${page.subtitle}</p>
+            <div id="page-body">Loading...</div>
+        `;
     
-    const body = document.getElementById('page-body');
-    const rawContent = await this.getContent(page.url);
+        const body = document.getElementById('page-body');
+        const rawContent = await this.getContent(page.url);
 
-    body.innerHTML = page.type === "markdown" ? 
-        `<div class="md-container">${marked.parse(rawContent)}</div>` : 
-        `<div class="pure-html-section">${rawContent}</div>`;
+        body.innerHTML = page.type === "markdown" ? 
+            `<div class="md-container">${marked.parse(rawContent)}</div>` : 
+            `<div class="pure-html-section">${rawContent}</div>`;
 
-    const contentLinks = main.querySelectorAll('a');
-    contentLinks.forEach(link => {
-        const destination = link.getAttribute('href');
-        
-        // If the href matches one of your page IDs (e.g., 'setup', 'specs')
-        if (this.pages[destination]) {
-            link.onclick = (e) => {
-                e.preventDefault(); // Stop the '#' or refresh
-                this.loadPage(destination);
-            };
+        const contentLinks = main.querySelectorAll('a');
+        contentLinks.forEach(link => {
+            const destination = link.getAttribute('href');
+            
+            // If the href matches one of your page IDs (e.g., 'setup', 'specs')
+            if (this.pages[destination]) {
+                link.onclick = (e) => {
+                    e.preventDefault(); // Stop the '#' or refresh
+                    this.loadPage(destination);
+                };
+            }
+        });
+
+        this.generateNavigation();
+        main.scrollTo(0, 0);
+
+        if (anchorId) {
+            setTimeout(() => {
+                const element = document.getElementById(anchorId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    window.location.hash = anchorId;
+                }
+            }, 150); 
+        } else {
+            main.scrollTo(0, 0);
+            history.replaceState(null, null, ' '); // Clears hash without jump
         }
-    });
-
-    this.generateNavigation();
-    main.scrollTo(0, 0);
     },
 
     generateNavigation: function() {
