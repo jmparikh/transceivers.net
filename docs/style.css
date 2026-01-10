@@ -490,3 +490,45 @@ nav {
   height: 50px; 
   width: 200px;
 }
+
+.coming-soon {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-style: italic;
+    padding: 5px 0;
+    list-style: none;
+}
+
+/* Sidebar Header/Navigation Link */
+.back-nav-container {
+    list-style: none; /* Removes the bullet point */
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color); /* Separates it from the sub-files */
+}
+
+.back-link {
+    text-decoration: none;
+    font-size: 0.85rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+
+.back-link:hover {
+    transform: translateX(-4px); /* Subtle nudge to the left on hover */
+    color: var(--text-main);
+}
+
+#sub-library-links {
+    padding-left: 0; /* Align everything to the left */
+}
+
+#sub-library-links li:not(.back-nav-container) {
+    /* Keep bullets only for the actual file links if desired */
+    list-style-type: disc; 
+    margin-left: 1.5rem;
+}

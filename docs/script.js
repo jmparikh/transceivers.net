@@ -18,13 +18,17 @@ const app = {
             title: "Types of Transceivers",
             subtitle: "Deep dive into the types of transceivers.",
             type: "markdown",
-            url: "./types-t.md"
+            url: "./types-t.md",
+            subFolder: "types-t",
+            subFiles: [] // Empty array triggers "Coming Soon"
         },
         types_cables: {
             title: "Types of Cables",
             subtitle: "Deep dive into the sea of cables, you see what I did there ;)",
             type: "markdown",
-            url: "./types-cables.md"
+            url: "./types-cables.md",
+            subFolder: "types-cables", // The folder name
+            subFiles: ["mpo-mtp.md", "mmf.md", "smf.md"] // The files inside
         },
         types_conn: {
             title: "Types of Connectors",
@@ -255,6 +259,7 @@ const app = {
             }
         });
 
+        this.renderSubLibrary(page);
         this.generateNavigation();
         main.scrollTo(0, 0);
 
@@ -337,6 +342,85 @@ const app = {
             }
             container.appendChild(li);
         });
+    },
+
+    renderSubLibrary: async function(page, isSubPage = false) {
+        const libContainer = document.getElementById('sub-library-links');
+        if (!libContainer) return;
+        libContainer.innerHTML = ''; 
+
+        // Issue: Add "Back to Parent" link if we are currently inside a sub-page
+        if (isSubPage) {
+            const backLi = document.createElement('li');
+            // Apply the container class to remove the bullet
+            backLi.className = 'back-nav-container'; 
+            
+            const backA = document.createElement('a');
+            backA.href = "#";
+            backA.className = "back-link";
+            backA.innerHTML = `<span>←</span> Back to ${page.title}`;
+            
+            backA.onclick = (e) => {
+                e.preventDefault();
+                this.loadPage(this.currentPage);
+            };
+            
+            backLi.appendChild(backA);
+            libContainer.appendChild(backLi);
+        }
+
+        if (!page.subFiles || page.subFiles.length === 0) {
+            const li = document.createElement('li');
+            li.className = 'coming-soon';
+            li.textContent = 'Coming Soon...';
+            libContainer.appendChild(li);
+            return;
+        }
+
+        for (const fileName of page.subFiles) {
+            const filePath = `./${page.subFolder}/${fileName}`;
+            const content = await this.getContent(filePath);
+            const match = content.match(/^#\s+(.*)|^##\s+(.*)|<h2>(.*)<\/h2>/m);
+            const title = match ? (match[1] || match[2] || match[3]) : fileName;
+
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = "#";
+            a.className = "toc-link";
+            a.textContent = title;
+            
+            // Pass the current page ID so the sub-page knows its parent
+            a.onclick = (e) => {
+                e.preventDefault();
+                this.loadSubPage(filePath, title, this.currentPage);
+            };
+
+            li.appendChild(a);
+            libContainer.appendChild(li);
+        }
+    },
+
+    loadSubPage: async function(path, title, parentId) {
+        const body = document.getElementById('page-body');
+        const rawContent = await this.getContent(path);
+        
+        // 1. Update UI to show we are in a sub-section
+        document.querySelector('.subtitle').textContent = `Module: ${title}`;
+        
+        // 2. Render Content
+        body.innerHTML = path.endsWith('.md') ? 
+            `<div class="md-container">${marked.parse(rawContent)}</div>` : 
+            `<div class="pure-html-section">${rawContent}</div>`;
+        
+        // 3. REFRESH TOC: This fixes the stale TOC (still showing the old TOC of the parent page)
+        // It will now scan the MACSetup.md headers instead of setup.md headers
+        this.generateNavigation(); 
+
+        // 4. Scroll to top
+        document.getElementById('main-content').scrollTo(0, 0);
+
+        // 5. Update the Sub-Module list to show a "Back" link (adds a button to go back to parent page)
+        this.renderSubLibrary(this.pages[parentId], true); 
     }
 };
 
