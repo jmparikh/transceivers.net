@@ -67,7 +67,7 @@ Here we will be discussing the types of optical cables:
             <td style="border: 1px solid #ddd; padding: 5px;">62.5</td>
             <td rowspan="5" style="border: 1px solid #ddd; padding: 5px;">850</td>
             <td style="border: 1px solid #ddd; padding: 5px; background-color: orange;"><strong><span id="om1">OM1</span><br><br>(Orange)</strong></td>
-            <td style="border: 1px solid #ddd; padding: 5px; background-color: #DDBD9E;">- LC/dual-LC<br><b>(APC:beige)</b><br><br>- MPO<br><b>(APC:beige)</b></td>
+            <td style="border: 1px solid #ddd; padding: 5px; background-color: #DDBD9E;">- LC/dual-LC<br><b>(UPC:beige)</b><br><b>(PC:beige)</b><br><br>- MPO<br><b>(UPC:beige)</b><br><b>(PC:beige)</b></td>
             <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;"><strong>LEDs</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">Slower.<br>Cost Effective for short runs.<br>Large Core.</td>
             <td style="border: 1px solid #ddd; padding: 5px;">30-275m</td>
@@ -76,7 +76,7 @@ Here we will be discussing the types of optical cables:
         <tr>
             <td rowspan="4" style="border: 1px solid #ddd; padding: 5px;">50</td>
             <td style="border: 1px solid #ddd; padding: 5px; background-color: orange;"><strong><span id="om2">OM2</span><br><br>(Orange)</strong></td>
-            <td style="border: 1px solid #ddd; padding: 5px; background-color: black; color: white">- LC/dual-LC<br><b>(APC:black)</b><br><br>- MPO<br><b>(APC:black)</b></td>
+            <td style="border: 1px solid #ddd; padding: 5px; background-color: black; color: white">- LC/dual-LC<br><b>(UPC:black)</b><br><b>(PC:black)</b><br><br>- MPO<br><b>(APC:black)</b><br><b>(PC:black)</b></td>
             <td style="border: 1px solid #ddd; padding: 5px;">Slower.<br>Cost Effective for short runs.<br>Small Core.</td>
             <td style="border: 1px solid #ddd; padding: 5px;">82-550m</td>
             <td style="border: 1px solid #ddd; padding: 5px;">1/10G<sup>**</sup></td>
@@ -105,6 +105,8 @@ Here we will be discussing the types of optical cables:
         </tr>
     </tbody>
 </table>
+
+OM1 and OM2 old, so use PC or UPC connectors.
 
 <sup>+</sup>: Listed in this page are the most common connector types used, there might be other less common connectors as well<br> AND ALSO MANUF CAN SOMETIMES USE GREEN/BLUE for APC/UPC MPOs as well. and they can also diverge from the color scheme. No standardization.
 CONFIRM IF THERE IS LC APC IN MPO or not
@@ -169,11 +171,17 @@ This mostly boils down to various factors:
 
 This is discussed in detail in [How to choose the right media?](choose-right)
 
+<br>
+<br>
 
-[sources <sup><a href="https://stordis.com/understanding-dac-aoc-and-aec-cables/">[1]</a><a href="https://www.omnitron-systems.com/blog/single-mode-vs-multimode-fiber-cable-a-direct-comparison-of-features-and-cost">[2]</a></sup>]
-https://www.cablesandkits.com/learning-center/difference-between-os2-om1-om2-om3-om4-om5/
-https://www.thefoa.org/tech/ColCodes.htm
-https://www.fs.com/blog/comparison-between-os1-and-os2-smf-cables-2695.html
-https://www.fs.com/sg/blog/multimode-fiber-types-om1-vs-om2-vs-om3-vs-om4-vs-om5-1338.html
-https://www.fs.com/blog/understanding-polarity-in-mtpmpo-system-948.html
-https://www.lightoptics.co.uk/blogs/news/why-need-to-understanding-fiber-connectors-upc-vs-apc
+---
+<h3 style="margin-bottom: 0.25px;">References</h3>
+Content on this page is a combination of original write-up + inspiration from the below mentioned places:
+<ol style="margin-top: 0.25px;">
+    <li><a target="_blank" rel="noopener noreferrer" href="https://stordis.com/understanding-dac-aoc-and-aec-cables/">Understanding DAC/AOC/AEC Cables</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.omnitron-systems.com/blog/single-mode-vs-multimode-fiber-cable-a-direct-comparison-of-features-and-cost">SMF-vs-MMF</a></li>
+    <li>Differences between [OS1-2, OM1-5]: <a target="_blank" rel="noopener noreferrer" href="https://www.cablesandkits.com/learning-center/difference-between-os2-om1-om2-om3-om4-om5/">[a]</a><a target="_blank" rel="noopener noreferrer" href="https://www.fs.com/sg/blog/multimode-fiber-types-om1-vs-om2-vs-om3-vs-om4-vs-om5-1338.html">[b]</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.thefoa.org/tech/ColCodes.htm">Cables and Connectors Color Codes</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.fs.com/blog/understanding-polarity-in-mtpmpo-system-948.html">Understanding Polarities in MPO/MTP Cables</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.lightoptics.co.uk/blogs/news/why-need-to-understanding-fiber-connectors-upc-vs-apc">Understanding UPC-vs-APC Connectors</a></li>
+</ol>

@@ -207,5 +207,14 @@ It has been found that CWDM/DWDM modules enable longer distances through wavelen
 - CWDM (Coarse Wavelength Division Multiplexing): Uses wider wavelength spacing; cost-effective for short to medium distances.​
 - DWDM (Dense Wavelength Division Multiplexing): Uses narrow wavelength spacing; suitable for long-distance and high-capacity networks.
 
-[sources <sup><a href="https://resources.l-p.com/knowledge-center/optical-module-classification">[2]</a><a href="https://www.prooptix.com/news/guide-to-optical-transceiver-standards/">[3]</a><a href="https://www.viksnewsletter.com/p/a-complete-guide-to-optical-transceiver-nomenclature/">[4]</a></sup>]
+<br>
+<br>
 
+---
+<h3 style="margin-bottom: 0.25px;">References</h3>
+Content on this page is a combination of original write-up + inspiration from the below mentioned places:
+<ol style="margin-top: 0.25px;">
+    <li><a target="_blank" rel="noopener noreferrer" href="https://resources.l-p.com/knowledge-center/optical-module-classification">Optical Module Classification</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.prooptix.com/news/guide-to-optical-transceiver-standards/">Optical Transceiver Standards</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.viksnewsletter.com/p/a-complete-guide-to-optical-transceiver-nomenclature/">Optical Transceiver Nomenclature</a></li>
+</ol>

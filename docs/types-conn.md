@@ -84,9 +84,21 @@ Example:
 </ul>
 
 
-References:
-- <sup>*</sup> The MTP connector is a high performance MPO connector engineered for better mechanical and optical performance.
-[sources <sup><a href="https://en.wikipedia.org/wiki/Optical_fiber_connector">[1]</a><a href="https://www.fs.com/blog/how-many-fiber-connector-types-do-you-know-1366.html">[2]</a><a href="https://web.archive.org/web/20090421090016/http://www.usconec.com/pages/faq/faqfrm.html">[3]</a></sup>]
-https://www.thefoa.org/tech/ColCodes.htm
-https://www.tarluz.com/passive-component/sc-connector-introduction-fiber-connector-introduction/
-- [<sup>++</sup> : a ring or cap, typically a metal one, which strengthens the end of a handle, stick, or tube and prevents it from splitting or wearing.]
+<h3 style="margin-bottom: 0.25px;">Notes</h3>
+<ul style="margin-top: 0.25px;">
+    <li><sup><b>*</b></sup> The MTP connector is a high performance MPO connector engineered for better mechanical and optical performance.</li>
+    <li>Ferule, on an MTP/MPO cable, is a ring or cap, typically a metal one, which strengthens the end of a handle, stick, or tube and prevents it from splitting or wearing.</li>
+</ul>
+
+<br>
+<br>
+
+---
+<h3 style="margin-bottom: 0.25px;">References</h3>
+Content on this page is a combination of original write-up + inspiration from the below mentioned places:
+<ol style="margin-top: 0.25px;">
+    <li><a target="_blank" rel="noopener noreferrer" href="https://web.archive.org/web/20090421090016/http://www.usconec.com/pages/faq/faqfrm.html">MPO/MTP Discussions/FAQ</a></li>
+    <li>Optical Fiber Connectors: <a target="_blank" rel="noopener noreferrer" href="https://www.fs.com/blog/how-many-fiber-connector-types-do-you-know-1366.html">[a]</a><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Optical_fiber_connector">[b]</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.thefoa.org/tech/ColCodes.htm">Cables and Connectors Color Codes</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.tarluz.com/passive-component/sc-connector-introduction-fiber-connector-introduction/">SC Connector Introduction</a></li>
+</ol>

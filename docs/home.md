@@ -1,6 +1,6 @@
 <b style="color: #0969da">trans</b>mitter + re<b style="color: #0969da">ceiver</b> = <b style="color: #0969da">transceiver</b> (NOT: remitter)
 
-...A transceiver is an electronic device which is a combination of a radio transmitter and a receiver, hence the name. It can both transmit and receive radio waves using an antenna, for communication purposes. These two related functions are often combined in a single device to reduce manufacturing costs. The term is also used for other devices which can both transmit and receive through a communications channel, such as optical transceivers which transmit and receive light in optical fiber systems, and bus transceivers which transmit and receive digital data in computer data buses...<sup><a href="https://en.wikipedia.org/wiki/Transceiver">[1]</a></sup>
+...A transceiver is an electronic device which is a combination of a radio transmitter and a receiver, hence the name. It can both transmit and receive radio waves using an antenna, for communication purposes. These two related functions are often combined in a single device to reduce manufacturing costs. The term is also used for other devices which can both transmit and receive through a communications channel, such as optical transceivers which transmit and receive light in optical fiber systems, and bus transceivers which transmit and receive digital data in computer data buses...
 
 So, essentially, a transceiver is a unit of communication used to facilitate both, the rx and tx in a radio/optical/digital communications.
 They can either be FRUs (Field Replaceble Units) or fixed into the chassis.
@@ -28,4 +28,13 @@ But here's what a good transceiver name should have:<br>
 
 The name also sometimes might have “BASE” in the speeds, this means baseband transmission. It essentially means the signal is transmitted directly without being modulated onto a carrier frequency. The aggregate data rate is ultimately what determines how fast the optical interconnect is.
 
-[sources <sup><a href="https://www.viksnewsletter.com/p/a-complete-guide-to-optical-transceiver-nomenclature/">[2]</a></sup>]
+<br>
+<br>
+
+---
+<h3 style="margin-bottom: 0.25px;">References</h3>
+Content on this page is a combination of original write-up + inspiration from the below mentioned places:
+<ol style="margin-top: 0.25px;">
+    <li><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Transceiver">Transceivers</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.viksnewsletter.com/p/a-complete-guide-to-optical-transceiver-nomenclature/">Optical Transceiver Nomenclature</a></li>
+</ol>
