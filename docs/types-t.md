@@ -29,7 +29,7 @@ The form factor, of the pluggable transceiver, determines the physical size and 
         <thead>
             <tr style="background-color: #f2f2f2;">
             <th style="border: 1px solid #ddd; padding: 5px; text-align: left; width: 20%;">Form Factor (Pluggable)</th>
-            <th style="border: 1px solid #ddd; padding: 5px; text-align: left; width: 20%;">Form Factor Types</th>
+            <th style="border: 1px solid #ddd; padding: 5px; text-align: left; width: 13%;">Form Factor Types</th>
             <th style="border: 1px solid #ddd; padding: 5px; text-align: left; width: 10%;">Rates/Speed</th>
             <th style="border: 1px solid #ddd; padding: 5px; text-align: left;">Description</th>
             <th style="border: 1px solid #ddd; padding: 5px; text-align: left;">Connector Type</th>
