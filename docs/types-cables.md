@@ -42,11 +42,11 @@ Here we will be discussing the types of optical cables:
             <td style="border: 1px solid #ddd; padding: 5px;">Yes</td>
         </tr>
         <tr>
-            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>SMF</strong><br>Single Mode Fiber</td>
+            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><span id="smf"><strong>SMF</strong></span><br>Single Mode Fiber</td>
             <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">These cable have a very narrow core, carry one signal and are designed for low-loss and is used for long distance ranges.</td>
             <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;">~9</td>
-            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;">1310/1550</td>
-            <td style="border: 1px solid #ddd; padding: 5px; background-color: yellow;"><strong>OS1<br><br>(Yellow)</strong></td>
+            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;">1310 (O Band)/<br>1550 (C Band)</td>
+            <td style="border: 1px solid #ddd; padding: 5px; background-color: #fdcf55;"><strong>OS1<br><br>(Yellow)</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px; background-color: blue; color: white;">- LC/dual-LC<br><b>(UPC:blue)</b></td>
             <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;"><strong>Lasers</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">Heavy polymer jacket, for indoor applications.<br>High attenuation.</td>
@@ -55,19 +55,19 @@ Here we will be discussing the types of optical cables:
             <td rowspan="7" style="border: 1px solid #ddd; padding: 5px;">No</td>
         </tr>
         <tr>
-            <td style="border: 1px solid #ddd; padding: 5px; background-color: yellow;"><strong><span id="os2">OS2</span><br><br>(Yellow)</strong></td>
+            <td style="border: 1px solid #ddd; padding: 5px; background-color: #fdcf55;"><strong><span id="os2">OS2</span><br><br>(Yellow)</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px; background-color: green; color: white;">- LC/dual-LC<br><b>(APC:green)</b><br><br>- MPO<br><b>(APC:green)</b></td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">Loose tube, for outdoor applications.<br>Can stretch without tensing the fiber.<br>Low attenuation.<br><strong>Used in <a href="#" onclick="app.loadPage('types_conn', 'mpo-mtp'); return false;">SMF-MPO</a>.<strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">upto 200km</td>
             <td style="border: 1px solid #ddd; padding: 5px;">1/40/100G</td>
         </tr>
         <tr>
-            <td rowspan="5" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>MMF</strong><br>Multi Mode Fiber</td>
+            <td rowspan="5" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><span id="mmf"><strong>MMF</strong></span><br>Multi Mode Fiber</td>
             <td rowspan="5" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">Multi Mode Fibers, are ones with a wider core, 50-10 0microns, are designed for cost-effective, short distance, high-bandwidth data transmission.</td>
             <td style="border: 1px solid #ddd; padding: 5px;">62.5</td>
             <td rowspan="5" style="border: 1px solid #ddd; padding: 5px;">850</td>
             <td style="border: 1px solid #ddd; padding: 5px; background-color: orange;"><strong><span id="om1">OM1</span><br><br>(Orange)</strong></td>
-            <td style="border: 1px solid #ddd; padding: 5px; background-color: #DDBD9E;">- LC/dual-LC<br><b>(UPC:beige)</b><br><b>(PC:beige)</b><br><br>- MPO<br><b>(UPC:beige)</b><br><b>(PC:beige)</b></td>
+            <td style="border: 1px solid #ddd; padding: 5px; background-color: #DDBD9E;">- LC/dual-LC<br><b>(UPC:beige)</b><br><b>(PC:beige) <u>[preferred]</u></b><br><br>- MPO<br><b>(UPC:beige)</b><br><b>(PC:beige) <u>[preferred]</u></b></td>
             <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;"><strong>LEDs</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">Slower.<br>Cost Effective for short runs.<br>Large Core.</td>
             <td style="border: 1px solid #ddd; padding: 5px;">30-275m</td>
@@ -76,29 +76,29 @@ Here we will be discussing the types of optical cables:
         <tr>
             <td rowspan="4" style="border: 1px solid #ddd; padding: 5px;">50</td>
             <td style="border: 1px solid #ddd; padding: 5px; background-color: orange;"><strong><span id="om2">OM2</span><br><br>(Orange)</strong></td>
-            <td style="border: 1px solid #ddd; padding: 5px; background-color: black; color: white">- LC/dual-LC<br><b>(UPC:black)</b><br><b>(PC:black)</b><br><br>- MPO<br><b>(APC:black)</b><br><b>(PC:black)</b></td>
+            <td style="border: 1px solid #ddd; padding: 5px; background-color: black; color: white">- LC/dual-LC<br><b>(UPC:black)</b><br><b>(PC:black) <u>[preferred]</u></b><br><br>- MPO<br><b>(APC:black)</b><br><b>(PC:black) <u>[preferred]</u></b></td>
             <td style="border: 1px solid #ddd; padding: 5px;">Slower.<br>Cost Effective for short runs.<br>Small Core.</td>
             <td style="border: 1px solid #ddd; padding: 5px;">82-550m</td>
             <td style="border: 1px solid #ddd; padding: 5px;">1/10G<sup>**</sup></td>
         </tr>
         <tr>
-            <td style="border: 1px solid #ddd; padding: 5px; background-color: rgba(102, 204, 204, 0.61);"><strong><span id="om3">OM3</span><br><br>(Aqua)</strong></td>
-            <td class="two-color-cell" style="border: 1px solid #ddd; padding: 5px; --color1: green; --color2: rgba(102, 204, 204, 0.61);">- LC/dual-LC<br><b>(APC:green (UPC:aqua)</b><br><br>- MPO<br><b>(APC:green (UPC:aqua)</b></td>
+            <td style="border: 1px solid #ddd; padding: 5px; background-color: #2ed9ed;"><strong><span id="om3">OM3</span><br><br>(Aqua)</strong></td>
+            <td class="two-color-cell" style="border: 1px solid #ddd; padding: 5px; --color1: green; --color2: #2ed9ed;">- LC/dual-LC<br><b>(APC:green (UPC:aqua)</b><br><br>- MPO<br><b>(APC:green (UPC:aqua)</b></td>
             <td rowspan="3" style="border: 1px solid #ddd; padding: 5px;"><strong>VCSELs</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">Higher Modal B/W.<br>Longer transmissions.<br><strong>Used in <a href="#" onclick="app.loadPage('types_conn', 'mpo-mtp'); return false;">MMF-MPO</a>.<strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">100-300m</td>
             <td style="border: 1px solid #ddd; padding: 5px;">1/10/40G<sup>***</sup></td>
         </tr>
         <tr>
-            <td class="two-color-cell" style="border: 1px solid #ddd; padding: 5px; --color1: rgba(102, 204, 204, 0.61); --color2: violet;"><strong><span id="om4">OM4</span><br><br>(Aqua/Violet)</strong></td>
-            <td class="two-color-cell" style="border: 1px solid #ddd; padding: 5px; --color1: green; --color2: rgba(102, 204, 204, 0.61);">- LC/dual-LC<br><b>(APC:green (UPC:aqua)</b><br><br>- MPO<br><b>(APC:green (UPC:aqua/magenta<wbr>/violet)</b></td>
+            <td class="two-color-cell" style="border: 1px solid #ddd; padding: 5px; --color1: #2ed9ed; --color2: #6e00b9;"><strong><span id="om4">OM4</span><br><br>(Aqua/Violet)</strong></td>
+            <td class="two-color-cell" style="border: 1px solid #ddd; padding: 5px; --color1: green; --color2: #2ed9ed;">- LC/dual-LC<br><b>(APC:green (UPC:aqua)</b><br><br>- MPO<br><b>(APC:green (UPC:aqua/magenta<wbr>/violet)</b></td>
             <td style="border: 1px solid #ddd; padding: 5px;">Higher Modal B/W.<br>Longer transmissions.<br><strong>Used in <a href="#" onclick="app.loadPage('types_conn', 'mpo-mtp'); return false;">MMF-MPO</a>.<strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">150-550m</td>
             <td style="border: 1px solid #ddd; padding: 5px;">1/10/40/100G<sup>****</sup></td>
         </tr>
         <tr>
-            <td style="border: 1px solid #ddd; padding: 5px; background-color: #32CD32;"><strong><span id="om5">OM5</span><br><br>(Lime Green</strong></td>
-            <td rowspan="2"  class="two-color-cell" style="border: 1px solid #ddd; padding: 5px; --color1: green; --color2: #32CD32;">- LC/dual-LC<br><b>(APC:green)<br>(UPC:lime-green)</b><br><br>- MPO<br><b>(APC:green)<br>(UPC:lime-green)</b></td>
+            <td style="border: 1px solid #ddd; padding: 5px; background-color: #5abd4b;"><strong><span id="om5">OM5</span><br><br>(Lime Green</strong></td>
+            <td rowspan="2"  class="two-color-cell" style="border: 1px solid #ddd; padding: 5px; --color1: green; --color2: #5abd4b;">- LC/dual-LC<br><b>(APC:green)<br>(UPC:lime-green)</b><br><br>- MPO<br><b>(APC:green)<br>(UPC:lime-green)</b></td>
             <td style="border: 1px solid #ddd; padding: 5px;">Supports SWDM.<br>High B/W and used in high speed DCs.<br><strong>Used in <a href="#" onclick="app.loadPage('types_conn', 'mpo-mtp'); return false;">MMF-MPO</a>.<strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">150-440m</td>
             <td style="border: 1px solid #ddd; padding: 5px;">10/40/100/<br>200/400G<sup>*****</sup></td>
@@ -184,4 +184,5 @@ Content on this page is a combination of original write-up + inspiration from th
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.thefoa.org/tech/ColCodes.htm">Cables and Connectors Color Codes</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.fs.com/blog/understanding-polarity-in-mtpmpo-system-948.html">Understanding Polarities in MPO/MTP Cables</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.lightoptics.co.uk/blogs/news/why-need-to-understanding-fiber-connectors-upc-vs-apc">Understanding UPC-vs-APC Connectors</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://edgeoptic.com/kb_article/mtp-mpo-cables-all-basics-you-need-to-know/">/MTP MPO Cables All Basics You Need To Know</a></li>
 </ol>
