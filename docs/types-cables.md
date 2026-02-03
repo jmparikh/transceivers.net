@@ -2,9 +2,23 @@ Since we need a medium to send and receive data, we will be discussing the next 
 
 Just like we discussed in [Types of Transceivers](types_t), that there are different types of transceivers w.r.t. form factor, speeds, standards etc. there are different types of cables to facilitate and the requirements of the transceivers, distance, speed, loss, reliance etc.
 
+<h3 style="margin-bottom: 0.25px;">Based on Type</h3>
+From the point of view of the port, modules and cables can be classified as either active or passive.
+<ol style="margin-top: 0.25px;">
+    <li> Active Cables</li> 
+    <li> Passive Cables</li>
+</ol>
+
+<h4 style="margin-bottom: 0.25px;">Active Cables</h4>
+Active cables and modules contain transmitters that regenerate the bit signals over the cable. All optical modules are active. 10/100/1000BaseT and 10GBaseT are active modules and contain an onboard PHY that handles the BaseT autonegotiation and TX/RX to the remote BaseT device. For active modules, the port only has to provide a TX signal with a base level of power to the module, and the module uses the power it receives on the port power bus to regenerate the signal to the remote side.
+<br>Although some copper cable assemblies are active, they are extremely rare.
+
+<h4 style="margin-bottom: 0.25px;">Passive Cables</h4>
+Passive cables (copper DACs) directly connect the port side of the module to the copper twinax media on the other side of the module in the assembly. The port TX lines provide the power to drive the signal to the remote end. The port goes through a training sequence with the remote end port to tune the power TX and RX parameters to optimize the received signal and ensure correct clock and data recovery at each RX end.
+
 <h3 style="margin-bottom: 0.25px;">Based on Materials</h3>
 The "material" corresponds to the type of material used inside the cable: 
-<ol>
+<ol style="margin-top: 0.25px;">
     <li> Optical Fiber Cables</li> 
     <li> Copper Cables</li>
 </ol>
@@ -185,4 +199,5 @@ Content on this page is a combination of original write-up + inspiration from th
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.fs.com/blog/understanding-polarity-in-mtpmpo-system-948.html">Understanding Polarities in MPO/MTP Cables</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.lightoptics.co.uk/blogs/news/why-need-to-understanding-fiber-connectors-upc-vs-apc">Understanding UPC-vs-APC Connectors</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://edgeoptic.com/kb_article/mtp-mpo-cables-all-basics-you-need-to-know/">/MTP MPO Cables All Basics You Need To Know</a></li>
+    https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-43/Monitoring-and-Troubleshooting/Troubleshooting-Network-Interfaces/Troubleshoot-Layer-1/
 </ol>

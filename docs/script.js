@@ -35,13 +35,13 @@ const app = {
             subtitle: "Deep dive into the types of connectors.",
             type: "markdown",
             url: "./types-conn.md"
+        },
+        autoneg: {
+            title: "Autonegotiation",
+            subtitle: "How do links know what speed to operate on? Telepathy? No, autonegotiation.",
+            type: "markdown",
+            url: "./autoneg.md"
         }
-        // types_cables: {
-        //     title: "Types of Cables",
-        //     subtitle: "Deep dive into the types of cables.",
-        //     type: "html",
-        //     url: "./types-c.md"
-        // }
     },
 
     navigation: [
@@ -52,6 +52,10 @@ const app = {
         { 
             label: "Types of L1 Media", 
             links: ['types_t', 'types_cables', 'types_conn'] 
+        },
+        { 
+            label: "L1 Capabilities", 
+            links: ['autoneg'] 
         }
     ],
 
