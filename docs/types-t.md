@@ -60,7 +60,7 @@ The form factor, of the pluggable transceiver, determines the physical size and 
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>SFP+</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">10G</td>
             <td style="border: 1px solid #ddd; padding: 5px;">Enhanced version of SFP for 10G Ethernet/Fiber Channel networks</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">1/<br>??</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">1/<br>NRZ</td>
             <td style="border: 1px solid #ddd; padding: 5px; text-align: left;">SFP</td>
             <td style="border: 1px solid #ddd; padding: 5px;">LC, RJ-45</td>
         </tr>
@@ -76,7 +76,7 @@ The form factor, of the pluggable transceiver, determines the physical size and 
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>SFP28</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">25G</td>
             <td style="border: 1px solid #ddd; padding: 5px;">An SFP type for 25G networks</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">1/<br>??</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">1/<br>NRZ</td>
             <td style="border: 1px solid #ddd; padding: 5px; text-align: left;">SFP, SFP+</td>
             <td style="border: 1px solid #ddd; padding: 5px;">LC</td>
         </tr>
@@ -84,7 +84,7 @@ The form factor, of the pluggable transceiver, determines the physical size and 
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>SFP56</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">50G</td>
             <td style="border: 1px solid #ddd; padding: 5px;">An SFP type for 50G networks, compatible with SFP28/SFP+ (25 and 10G)</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">1/<br>??</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">1/<br>PAM-4</td>
             <td style="border: 1px solid #ddd; padding: 5px; text-align: left;">SFP, SFP+, SFP28</td>
             <td style="border: 1px solid #ddd; padding: 5px;">LC</td>
         </tr>
@@ -182,7 +182,7 @@ The form factor, of the pluggable transceiver, determines the physical size and 
             <td rowspan="9" style="border: 1px solid #ddd; padding: 5px; vertical-align: top; text-align: left;"><strong>Quad Small Form Factor</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>QSFP</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">4G(4x1G)</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">The "Q" prefix indicates "Quad" meaning four channels. Four parallel electrical and optical lanes enable 4x data transmission.</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">The "Q" prefix indicates "Quad" meaning four channels. Four parallel electrical and optical lanes enable 4x data transmission. Originally defined for 10G</td>
             <td style="border: 1px solid #ddd; padding: 5px;">4/<br>??</td>
             <td style="border: 1px solid #ddd; padding: 5px; text-align: left;">x</td>
             <td style="border: 1px solid #ddd; padding: 5px;">LC</td>
@@ -191,7 +191,7 @@ The form factor, of the pluggable transceiver, determines the physical size and 
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>QSFP+</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">40G</td>
             <td style="border: 1px solid #ddd; padding: 5px;">Enhanced version supporting Quad, 4x10 Gbps channels, for high-density 40G Ethernet/InfiniBand QDRdeployments.<br>The module contains 4 independent transmit and receive channels.<br><b>Universal transceiver supporting both multi-mode and single-mode fiber</b><br>Can also support 4x10Gb links</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">4/<br>??</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">4/<br>NRZ</td>
             <td style="border: 1px solid #ddd; padding: 5px; text-align: left;">x</td>
             <td style="border: 1px solid #ddd; padding: 5px;">LC</td>
         </tr>
@@ -377,13 +377,13 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
             <td style="border: 1px solid #ddd; padding: 5px;"><b>800G</b> (OSFP)</td>
         </tr>
         <tr>
-            <td rowspan="3" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>FR</strong><br>Far Reach (Lambda)</td>
+            <td rowspan="4" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>FR</strong><br>Far Reach (Lambda)</td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
-            <td rowspan="3" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">Also a type of Lambda Optics, these are optimized for longer distances, low poer, than LR transceivers for ranges of 100 km to several hundred kilometers over single-mode. They are suited to long-haul telecommunications and other applications over vast distances.<br>FRs use wavelength division multiplexing (WDM), which transmits multiple data streams over the same fiber while using different optical signals at other wavelengths. This improves the utilization of fiber resources.<br> Converts NRZ to PAM4 and transmits in PAM4</td>
+            <td rowspan="3" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">Also a type of Lambda Optics, these are optimized for longer distances, low poer, than LR transceivers for ranges of 100 km to several hundred kilometers over single-mode. They are suited to long-haul telecommunications and other applications over vast distances.<br>FRs use wavelength division multiplexing (WDM), which transmits multiple data streams over the same fiber while using different optical signals at other wavelengths. This improves the utilization of fiber resources.<br> Converts NRZ to PAM4 and transmits in PAM4.<br> Unlike the DR4 and SR8, all 4 optical channels from an FR4 are multiplexed onto one fiber, resulting in a total of 2 fibers from the module (1 Tx and 1 Rx)</td>
             <td style="border: 1px solid #ddd; padding: 5px;">PAM4 (1x100G)</td>
-            <td rowspan="3" style="border: 1px solid #ddd; padding: 5px;">2km</td>
+            <td rowspan="4" style="border: 1px solid #ddd; padding: 5px;">2km</td>
             <td style="border: 1px solid #ddd; padding: 5px;"><b>100G</b> (QSFP)<br><b>200G</b> (QSFP56)</td>
-            <td rowspan="3" style="border: 1px solid #ddd; padding: 5px;">SMF</td>
+            <td rowspan="4" style="border: 1px solid #ddd; padding: 5px;">SMF</td>
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">4</td>
@@ -396,13 +396,22 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
             <td style="border: 1px solid #ddd; padding: 5px;"><b>400G</b> (QSFP-DD)<br><b>800G</b> (QSFP-DD)</td>
         </tr>
         <tr>
-            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>VSR</strong><br>Very Short Range</td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">2FR4 (8)</td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">In addition to the above mentioned decription, 2FR4 means 2x200G-FR4, so each of the 200G FR4 links has 4 optical channels, multiplexed onto one fiber pair (1 Tx and 1 Rx per 200G link).  A 400G-2FR4 module has 2 of these links, resulting in a total of two pairs of single mode fiber (or 4 fibers total), and a total of 8 optical channels.<br>The 2FR4 module uses a dual CS connector to connect to 2 fiber pairs.</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">PAM4 (8x50G)</td>
+            <td style="border: 1px solid #ddd; padding: 5px;"><b>400G</b> (QSFP-DD)<br><b>800G</b> (QSFP-DD)</td>
+        </tr>
+        <tr>
+            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>VSR</strong><br>Very Short Range</td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
-            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"></td>
-            <td style="border: 1px solid #ddd; padding: 5px;"></td>
-            <td style="border: 1px solid #ddd; padding: 5px; text-align: left;"></td>
-            <td style="border: 1px solid #ddd; padding: 5px;"></td>
-            <td style="border: 1px solid #ddd; padding: 5px;">MMF</td>
+            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">A very short range optic, used to carry high speed data for very short links</td>
+            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;">NRZ (4x25G)<br>PAM4 (4x50G | 4x100G)</td>
+            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; text-align: left;">50m</td>
+            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;"><b>40G</b> (QSFP+)<br><b>100G</b> (QSFP28)<br><b>200G</b> (QSFP56)<br><b>400G</b> (QSFP112)</td>
+            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;">MMF</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">4</td>
         </tr>
         <tr>
             <td rowspan="4" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>SR</strong><br>Short Range</td>
@@ -454,7 +463,7 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">4</td>
-            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;">These are designed for long distances, which convert 4x25G channels into optical signals to be sent over a single 100G fiber.</td>
+            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;">These are designed for long distances, which convert 4x25G channels into optical signals to be sent over a single 100G fiber.<br> Unlike the DR4 and SR8, all 4 optical channels from an LR4 are multiplexed onto one fiber, resulting in a total of 2 fibers from the module (1 Tx and 1 Rx)</td>
             <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;">NRZ (4x25G)<br>PAM4 (4x50G | 4x100G)</td>
             <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;"><b>100G</b> (QSFP)<br><b>200G</b> (QSFP56)<br><b>400G</b> (QSFP112)</td>
         </tr>
@@ -532,7 +541,7 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
             <td style="border: 1px solid #ddd; padding: 5px;">..</td>
             <td style="border: 1px solid #ddd; padding: 5px;">NRZ (8x25G)<br>PAM4 (8x50G | 8x100G)</td>
             <td style="border: 1px solid #ddd; padding: 5px;">200G (8x25G)<br>400G (8x50G PAM4 > 4x100G optical)<br> 800G</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">SMF (MPO-16)</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">SMF (MPO-12/16)</td>
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>ZR/ZR+</strong><br>Zero Dispersion Shifted Range</td>
@@ -607,6 +616,7 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">4</td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;">10km</td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
         </tr>
@@ -639,6 +649,7 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td rowspan="3" style="border: 1px solid #ddd; padding: 5px;">2km</td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
         </tr>
@@ -657,8 +668,22 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
         </tr>
         <tr>
-            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>PSM</strong></td>
+            <td rowspan="3" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>PSM</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">4</td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">8</td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
@@ -709,4 +734,8 @@ Content on this page is a combination of original write-up + inspiration from th
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf">Arista Transceiver Datasheet</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.htfwdm.com/info/one-minute-to-know-about-sfp-sx-lx-ex-zx-sr-lr-65058377.html">SX-LX-EX-ZX-SR-LR</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.naddod.com/blog/the-evolution-of-400g-800g-and-1-6t-optical-modules">400G, 800G, 1.6T optics</a></li>
+    https://www.arista.com/assets/data/pdf/Datasheets/Arista-400G_Optics_FAQ.pdf
+    https://www.fs.com/blog/demystifying-800g-transceiver-types-applications-and-faqs-34.html
+    https://www.fs.com/uk/blog/400g-qsfpdd-fr4-vs-fr8-what-is-the-difference-8851.html
+    https://www.arista.com/assets/data/pdf/Datasheets/400ZR_DCI_Solution_Datasheet.pdf
 </ol>

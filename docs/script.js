@@ -41,6 +41,12 @@ const app = {
             subtitle: "How do links know what speed to operate on? Telepathy? No, autonegotiation.",
             type: "markdown",
             url: "./autoneg.md"
+        },
+        fec: {
+            title: "FEC",
+            subtitle: "'I keep (or atleast try to keep) your data error-free. Thank me later.'",
+            type: "markdown",
+            url: "./fec.md"
         }
     },
 
@@ -55,7 +61,7 @@ const app = {
         },
         { 
             label: "L1 Capabilities", 
-            links: ['autoneg'] 
+            links: ['autoneg', 'fec'] 
         }
     ],
 

@@ -6,6 +6,10 @@ The objective of the Auto-Negotiation function is to provide the means to exchan
 
 Auto-Negotiation is a physical layer function, and is implemented in the PHY. The MAC is none the wiser to the gyrations afoot at the lower layers. The standard defines distinct Auto-Negotiation schemes to support different Ethernet media systems.
 
+While optical cables have traditionally been used for longer distance, high-speed connections, they are often too power-consuming and expensive for short-distance applications. As a result, electrical cables are still the preferred solution for these scenarios. However, transmitting 100Gbps over even a few meters of electrical cable presents significant signal integrity challenges. Therefore, advanced link equalization and Forward Error Correction (FEC) are critical elements to ensure the appropriate signal quality.
+
+AN has been included for high-speed Ethernet wherein each link partner can support multiple implementations. For instance, a 100Gbps link can be configured as 100GBASE-CR10 (10 x 10Gbps lanes), 100GBASE-CR4 (4 x 25Gbps lanes), 100GBASE-CR2 (2 x 50Gbps lanes), and 100GBASE-CR1 (1 x 100Gbps lane). The AN process ensures both ends of a link support the same speed, configurations, and FEC implementation.
+
 The definition of autonegotiation (or autoneg) has changed slightly with each new Ethernet speed and technology. We have three main Clauses (defined across various IEEE standards, IEEE 802.3 clauses 28, 37, 73), to allow us to negotiate different speeds over different mediums:
 <dl>
   <dt>Clause 28 (Twisted Pair, 10/100/1000/10GBASE-T):</dt>
@@ -52,6 +56,9 @@ All three schemes provide a means for link partners to advertise their capabilit
 
 <b>** Note</b>: Majorly, there is no 10G autoneg defined for DAC and optical links; only 10GBASE-T and backplane links have autoneg standards. For all other optical modules besides 1000BASE-X, there is no autonegotiation standard.
 
+Auto-Negotiation (AN) and Link Training (LT) are two of the essential processes required to establish the characteristics of the link partners including supported link speed(s), FEC enablement, and tuning of transmitter (Tx) equalizers. The purpose of these processes is to ensure the signal integrity of a link is adequate before real payload traffic is transmitted at full line speed.
+While AN works at a low link speed rate, LT requires full wire speed to optimize the transmissions. The two link partners communicate via the LT protocol to tune their Tx equalizers to achieve the best possible Bit Error Rate (BER) within the specified time frame. At 100Gbps data rates, FEC will improve BER, reduce lost or retransmitted packets, and generally optimize the link transactions
+
 <h3 style="margin-bottom: 0.25px;">Link Training?</h3>
 Link training is a process by which the transmitter and receiver on a high-speed serial link communicate with each other in order to tune their equalization settings. In theory, link training enables automatic tuning of the finite impulse response (FIR) filter for each channel in an application-specific integrated circuit (ASIC) to achieve the desired bit error rate (BER).
 
@@ -89,5 +96,6 @@ Content on this page is a combination of original write-up + inspiration from th
     <li><a target="_blank" rel="noopener noreferrer" href="https://support.hms-networks.com/hc/en-us/articles/27220999511698-Ethernet-Auto-Negotiation">Ethernet-Auto-Negotiation</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.iol.unh.edu/sites/default/files/knowledgebase/ethernet/Clause_28_Auto-Negotiation.pdf">Clause28 Auto-Negotiation</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-43/Monitoring-and-Troubleshooting/Troubleshooting-Network-Interfaces/Troubleshoot-Layer-1/">Troubleshoot Layer-1</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://ethernetalliance.org/blog/2024/07/15/the-complexity-of-high-speed-ethernet-auto-negotiation-an-and-link-training-lt/">Complexity of High Speed Ethernet AN and Link Training</a></li>
     <li>AI</li>
 </ol>
