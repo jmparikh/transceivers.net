@@ -147,7 +147,7 @@ Here we will be discussing the types of copper cables:
     <tbody>
         <tr>
             <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>DAC</strong><br>Direct Attach Copper</td>
-            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>Passive DAC</strong></td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>Passive DAC*</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px;">Often used for short-range, high-speed connections, passive DAC relies on the electrical power from the host equipment, supporting short distances.</td>
             <td style="border: 1px solid #ddd; padding: 5px;">upto 7m</td>
             <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;">10/25/40/100++</td>
@@ -168,6 +168,11 @@ Here we will be discussing the types of copper cables:
         </tr>
     </tbody>
 </table>
+
+*The IEEE 802.3by spec has 3 different 25G cable types (CA-N, CA-S, CA-L), which are aligned to 3 different loss classification categories and have a minimum FEC requirement.
+[CA-N 12.98dB loss the highest grade, and no FEC is required]
+[CA-S 16.48dB loss the middle grade, and BASE-R or RS FEC is required]
+[CA-L 22.48dB loss the lowest grade, and RS FEC is required]
 
 <h3 style="margin-bottom: 0.25px;">How to choose the right cable?</h3>
 If you are network designer like "a child in front of 100 icecream flavors", you will surely be confused with what cables to choose for a link.
@@ -199,5 +204,6 @@ Content on this page is a combination of original write-up + inspiration from th
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.fs.com/blog/understanding-polarity-in-mtpmpo-system-948.html">Understanding Polarities in MPO/MTP Cables</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.lightoptics.co.uk/blogs/news/why-need-to-understanding-fiber-connectors-upc-vs-apc">Understanding UPC-vs-APC Connectors</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://edgeoptic.com/kb_article/mtp-mpo-cables-all-basics-you-need-to-know/">/MTP MPO Cables All Basics You Need To Know</a></li>
-    https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-43/Monitoring-and-Troubleshooting/Troubleshooting-Network-Interfaces/Troubleshoot-Layer-1/
+    <li><a target="_blank" rel="noopener noreferrer" href="https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-43/Monitoring-and-Troubleshooting/Troubleshooting-Network-Interfaces/Troubleshoot-Layer-1/">Troubleshooting Layer-1</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.arista.com/assets/data/pdf/Arista25G_TC_QA.pdf">Arista 25G Cables FAQ</a></li>
 </ol>
