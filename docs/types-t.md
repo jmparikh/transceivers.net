@@ -22,8 +22,35 @@ The medium corresponds to the type of communication channel does one want to us,
     </ul>
 </ol>
 
+<h3 style="margin-bottom: 0.25px; "><span id="types-t_based-on-ff">Based on Speeds</span></h3>
+Transceivers come not are bult to support all sorts of sizes and form factors and standards, but also are built to accomodate different speeds.<br/>
+The most common speeds are: 100M/1G/10G/25G/40G/50G/100G/200G/400G/800G/1.6T
+<br><br>
+My 2 bits (you see what I did there? bits?), is that transiceiver technology always has to stay 2 steps ahead of the trend. Cause we cannot have devices with 1.6Tbps interfaces without 1.6T optics. It will be equal to building a heavy duty offroad car and then waiting for the tire researchers to build/standardize tires for the new car. DOesn't make sense, right? 
+
+Similarly, transceiver sciende is one of those things, in networks, that is actively reseacrched upon, to try to stay ahead of the growing high-speed trend.
+Now, high speed transceivers come with their own sets of difficulties, like:
+<ul>
+    <li>Heating</li>
+    <li>Power Draw</li>
+    <li>Lasers</li>
+    <li>Size</li>
+    <li>Resilience, etc.</li>
+</ul>
+(I do agree that all of this is also a factor to be considered in low-speed optics, but these factors play a very big role in high-speed optics)
+And due to this, researchers come up with intuitibve ways to pack high-speed optics while taking care of the above mentioned areas.
+
+There also are optics which combine two transceivers with X speed, to make a 2X speed transceiver:
+For example:
+<ul>
+    <li>800G: 800GBASE-FR8 or an 800GBASE-2FR4</li>
+    <li>400G: 400GBASE-FR4 or 400GBASE-2FR4</li>
+    <li>200G: 200GBASE-LR8 200GBASE-2LR4</li>
+</ul>
+
 <h3 style="margin-bottom: 0.25px; "><span id="types-t_based-on-ff">Based on form factor</span></h3>
-The form factor, of the pluggable transceiver, determines the physical size and interface of the transceiver. This essentially influences the compatibility with networking equipment, and the speed it can run on.
+The form factor, of the pluggable transceiver, determines the physical size and interface of the transceiver. This essentially influences the compatibility with networking equipment, and the speed it can run on.<br>
+<img src="./assets/optics-packaging-sizes.png" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
 
 <table style="width: 100%; border-collapse: collapse;">
     <thead>
@@ -321,8 +348,6 @@ The form factor, of the pluggable transceiver, determines the physical size and 
     </tbody>
 </table>
 
-<img src="./assets/optics-packaging-sizes.png">
-
 <h3 style="margin-bottom: 0.25px;"><span id="types-t_based-on-rng-spd">Based on Range and Speeds</span></h3>
 In association with the above mentioned types, not all types of optics (of diff mediums or speeds) can be used for all ranges of communcations. Range is referring to the length/distance a signal needs to traverse before reaching the other end of the link. Here's the types of transceiver range standards based on their speeds.<br>
 Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b style="color: #da3609ff">Y</b><b style="color: #09dad0ff">Z</b>" where:
@@ -356,13 +381,22 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
     </thead>
     <tbody>
         <tr>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>AOC</strong><br>Active Optical Cable</td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">Represents a transmission distance of a few meters, using a high-speed optical cable connection. Can use SFP/QSFP optics based on speed</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">NRZ/PAM4 (based on speed)</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">100m</td>
+            <td style="border: 1px solid #ddd; padding: 5px;"><b>1G/10G/25G</b> (SFP)<br><b>50G</b> (SFP56/SFP-DD)</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">MMF</td>
+        </tr>
+        <tr>
             <td rowspan="4" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>CR</strong><br>Copper Reach</td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
             <td rowspan="4" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">Represents a transmission distance of a few meters. "C" stands for copper, indicating a high-speed copper cable connection. Can use SFP/QSFP optics based on speed</td>
             <td rowspan="4" style="border: 1px solid #ddd; padding: 5px;">NRZ/PAM4 (based on speed)</td>
             <td rowspan="4" style="border: 1px solid #ddd; padding: 5px;">5m</td>
             <td style="border: 1px solid #ddd; padding: 5px;"><b>1G/10G/25G</b> (SFP)<br><b>50G</b> (SFP56/SFP-DD)</td>
-            <td rowspan="4" style="border: 1px solid #ddd; padding: 5px;">Active Copper Cable</td>
+            <td rowspan="4" style="border: 1px solid #ddd; padding: 5px;">Active/Passive Copper Cable</td>
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">2</td>
@@ -400,6 +434,24 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">In addition to the above mentioned decription, 2FR4 means 2x200G-FR4, so each of the 200G FR4 links has 4 optical channels, multiplexed onto one fiber pair (1 Tx and 1 Rx per 200G link).  A 400G-2FR4 module has 2 of these links, resulting in a total of two pairs of single mode fiber (or 4 fibers total), and a total of 8 optical channels.<br>The 2FR4 module uses a dual CS connector to connect to 2 fiber pairs.</td>
             <td style="border: 1px solid #ddd; padding: 5px;">PAM4 (8x50G)</td>
             <td style="border: 1px solid #ddd; padding: 5px;"><b>400G</b> (QSFP-DD)<br><b>800G</b> (QSFP-DD)</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>FX</strong><br>Fast Ethernet</td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">Operating at 1310nm, to transmit 100M speeds to upto 2kms.</td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px; text-align: left;">550m-2km</td>
+            <td style="border: 1px solid #ddd; padding: 5px;"><b>100M</b> (SFP)</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">??</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>LFX</strong><br>(non-standard) Fast Ethernet</td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">Similar to FX, but achieves longer distances over a pair of multi-mode fibers through the use of Fabry–Pérot laser transmitter running on 1310 nm wavelength. The signal attenuation per km at 1300 nm is about half the loss of 850 nm</td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px; text-align: left;">4-5km</td>
+            <td style="border: 1px solid #ddd; padding: 5px;"><b>100M</b> (SFP)</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">SMF ??</td>
         </tr>
         <tr>
             <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>VSR</strong><br>Very Short Range</td>
@@ -531,7 +583,7 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">4</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">DR4 supports a maximum transmission distance of 500 meters on 1310 nm center wavelength. DR4 module converts 8 channels of 50Gb/s (PAM4) electrical signal into 4 channels of parallel optical output data, each capable of 100Gb/s data rate for an aggregated bandwidth of 400Gbls..</td>
+            <td style="border: 1px solid #ddd; padding: 5px;"><b>A PSM optic</b>, DR4 supports a maximum transmission distance of 500 meters on 1310 nm center wavelength. DR4 module converts 8 channels of 50Gb/s (PAM4) electrical signal into 4 channels of parallel optical output data, each capable of 100Gb/s data rate for an aggregated bandwidth of 400Gbls.</td>
             <td style="border: 1px solid #ddd; padding: 5px;">PAM4 (4x50G | 4x100G)</td>
             <td style="border: 1px solid #ddd; padding: 5px;">200G<br>400G (8x50G PAM4 > 4x100G optical)</td>
             <td style="border: 1px solid #ddd; padding: 5px;">SMF (MPO-12)</td>
@@ -555,41 +607,54 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
         <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>SX</strong><br>Short Wavelength</td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
-            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">These are optimized for transmission over short distances and are used in LAN and data center applications.</td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">These optics are a version of Fast Ethernet over optical fiber, optimized for transmission over short distances and are used in LAN and data center applications.<br>Lower-cost, short-distance, alternative for FX (as these uses LEDs)</td>
             <td style="border: 1px solid #ddd; padding: 5px;">NRZ</td>
             <td style="border: 1px solid #ddd; padding: 5px;">500m</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">1G</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">10M/100M/1G</td>
             <td style="border: 1px solid #ddd; padding: 5px;">MMF</td>
         </tr>
         <tr>
-            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>LX</strong><br>Long Wavelength</td>
+            <td rowspan="3" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>LX</strong><br>Long Wavelength</td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
-            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">These are optimized for transmission over long distances and are used in a wide range of network environments, including data centers. Enterprise networks and telecommunications. LX supports link up to 10km over SMF (single mode fiber) or 550m on MMF.  SMF LX works at 1310nm, it is more affected by waveguide dispersion, and it is more affected by micro bends, twists and stress in the fiber. These modules are used for Ethernet switches and routers to connect it in the different buildings.</td>
-            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;">NRZ</td>
-            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;">550m-10km</td>
+            <td rowspan="3" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">These are optimized for transmission over long distances and are used in a wide range of network environments, including data centers. Enterprise networks and telecommunications. LX supports link up to 10km over SMF (single mode fiber) or 550m on MMF.  SMF LX works at 1310nm, it is more affected by waveguide dispersion, and it is more affected by micro bends, twists and stress in the fiber. These modules are used for Ethernet switches and routers to connect it in the different buildings.</td>
+            <td rowspan="3" style="border: 1px solid #ddd; padding: 5px;">NRZ</td>
+            <td rowspan="3" style="border: 1px solid #ddd; padding: 5px;">550m-10km</td>
             <td style="border: 1px solid #ddd; padding: 5px;">1G</td>
-            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px;">SMF/MMF</td>
+            <td rowspan="3" style="border: 1px solid #ddd; padding: 5px;">SMF/MMF (OM1/2)</td>
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">4</td>
             <td style="border: 1px solid #ddd; padding: 5px;">40G/100G</td>
         </tr>
         <tr>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">10</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">100M</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>BX</strong><br></td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">This transceiver uses an optical multiplexer to split TX and RX signals into different wavelengths on the same fiber.</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">10km</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">100M</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">SMF</td>
+        </tr>
+        <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>EX</strong><br>Extended Wavelength*</td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">These transceivers are known for reaching distances upto 40kms and can operate at different wavelengths, but the standard varies among different vendors.</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">These transceivers (also known as 100BASE-LH (long haul)) are known for reaching distances upto 40kms and can operate at different wavelengths, but the standard varies among different vendors.<br>Vrty similar to 100BASE-LX10 but achieves longer distances up to 40 km over a pair of single-mode fibers due to higher quality optics than a LX10, running on 1310 nm wavelength lasers.<br>This is not a formal standard but industry-accepted term. And is easily confused with 100BASE-LX10 or 100BASE-ZX because the use of -LX(10), -LH, -EX, and -ZX is ambiguous between vendors.</td>
             <td style="border: 1px solid #ddd; padding: 5px;">NRZ</td>
             <td style="border: 1px solid #ddd; padding: 5px;">40km</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">1G</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">100M/1G</td>
             <td style="border: 1px solid #ddd; padding: 5px;">(1310/1550nm) SMF</td>
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>ZX</strong><br>Extended Wavelength</td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">These are optimized for transmission over long-distances and are used in long-haul telecoms networks, metropolitan areas, etc.</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">Non-standrd, optimized, but multi-vendor term to refer to achieve transmission over long-distances and are used in long-haul telecoms networks, metropolitan areas, etc.<br>Some vendors specify distances up to 160 km over single-mode fiber, sometimes called 100BASE-EZX.<br></td>
             <td style="border: 1px solid #ddd; padding: 5px;">NRZ</td>
             <td style="border: 1px solid #ddd; padding: 5px;">80km</td>
-            <td style="border: 1px solid #ddd; padding: 5px;">1G</td>
+            <td style="border: 1px solid #ddd; padding: 5px;">100M/1G</td>
             <td style="border: 1px solid #ddd; padding: 5px;">(1550nm) SMF</td>
         </tr>
         <tr>
@@ -614,11 +679,11 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
         <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>PLR4</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">4</td>
-            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;">PSM</td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;">10km</td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
-            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;">SMF</td>
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>PLR4L</strong></td>
@@ -626,7 +691,7 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
-            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;">SMF</td>
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>UNIV(4)</strong></td>
@@ -655,7 +720,7 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">4</td>
-            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;">PSM</td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
@@ -690,8 +755,15 @@ Most of these names, will be in this format "<b style="color: #daa909ff">X</b><b
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
         </tr>
         <tr>
-            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>VR</strong></td>
+            <td rowspan="2" style="border: 1px solid #ddd; padding: 5px; vertical-align: top;"><strong>VR</strong></td>
             <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">1</td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+            <td style="border: 1px solid #ddd; padding: 5px;"></td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 5px; vertical-align: top;">8</td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
             <td style="border: 1px solid #ddd; padding: 5px;"></td>
@@ -708,7 +780,7 @@ It has been found that CWDM/DWDM modules enable longer distances through wavelen
 
 <h3 style="margin-bottom: 0.25px;">Based Vendor</h3>
 Vendors in the industry also have their own optics stanadrds like:
-Arista: LRL, SR4E, ERL, UNIV,  etc..
+Arista: LRL, SR4E, ERL, UNIV, XSR4, etc..
 
 These optics might or might not be different from the ones out there, but can have their own, new characteristics etc.
 
@@ -719,6 +791,7 @@ These optics might or might not be different from the ones out there, but can ha
 <h3 style="margin-bottom: 0.25px;">References</h3>
 Content on this page is a combination of original write-up + inspiration from the below mentioned places:
 <ol style="margin-top: 0.25px;">
+    <li><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/List_of_early_Ethernet_standards">List of early Ethernet standards</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://resources.l-p.com/knowledge-center/optical-module-classification">Optical Module Classification</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.prooptix.com/news/guide-to-optical-transceiver-standards/">Optical Transceiver Standards</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.viksnewsletter.com/p/a-complete-guide-to-optical-transceiver-nomenclature/">Optical Transceiver Nomenclature</a></li>
@@ -734,8 +807,9 @@ Content on this page is a combination of original write-up + inspiration from th
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.arista.com/assets/data/pdf/Datasheets/Transceiver-Data-Sheet.pdf">Arista Transceiver Datasheet</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.htfwdm.com/info/one-minute-to-know-about-sfp-sx-lx-ex-zx-sr-lr-65058377.html">SX-LX-EX-ZX-SR-LR</a></li>
     <li><a target="_blank" rel="noopener noreferrer" href="https://www.naddod.com/blog/the-evolution-of-400g-800g-and-1-6t-optical-modules">400G, 800G, 1.6T optics</a></li>
-    https://www.arista.com/assets/data/pdf/Datasheets/Arista-400G_Optics_FAQ.pdf
-    https://www.fs.com/blog/demystifying-800g-transceiver-types-applications-and-faqs-34.html
-    https://www.fs.com/uk/blog/400g-qsfpdd-fr4-vs-fr8-what-is-the-difference-8851.html
-    https://www.arista.com/assets/data/pdf/Datasheets/400ZR_DCI_Solution_Datasheet.pdf
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.arista.com/assets/data/pdf/Datasheets/Arista-400G_Optics_FAQ.pdf">Arista 400G Optics FAQ</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.fs.com/blog/demystifying-800g-transceiver-types-applications-and-faqs-34.html">Demystifying 800g Transceiver Types and Applications FAQs</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.fs.com/uk/blog/400g-qsfpdd-fr4-vs-fr8-what-is-the-difference-8851.html">Differences between 400G-QSFPDD-FR4/FR8</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="https://www.arista.com/assets/data/pdf/Datasheets/400ZR_DCI_Solution_Datasheet.pdf">Arista 400G-ZR Solution</a></li>
+    https://en.wikipedia.org/wiki/Fast_Ethernet
 </ol>
