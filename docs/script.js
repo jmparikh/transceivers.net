@@ -47,6 +47,18 @@ const app = {
             subtitle: "'I keep (or atleast try to keep) your data error-free. Thank me later.'",
             type: "markdown",
             url: "./fec.md"
+        },
+        prom    : {
+            title: "PROM",
+            subtitle: "Dance prom? Or PROM memory?",
+            type: "markdown",
+            url: "./prom.md"
+        },
+        eyediagram: {
+            title: "Eye Diagram",
+            subtitle: "A way to evaluate quality and performance of signals in high speed links.",
+            type: "markdown",
+            url: "./eye-diagram.md"
         }
     },
 
@@ -62,6 +74,10 @@ const app = {
         { 
             label: "L1 Capabilities", 
             links: ['autoneg', 'fec'] 
+        },
+        { 
+            label: "Peripheral Technologies", 
+            links: ['prom', 'eyediagram'] 
         }
     ],
 
