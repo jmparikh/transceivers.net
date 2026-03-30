@@ -16,7 +16,7 @@ FECs are also a part of the information which is exchanged while in the auto-neg
 
 <h3 style="margin-bottom: 0.25px;">Types of FEC</h3>
 Let's talk FEC!
-<h4 style="margin-bottom: 0.25px;">Reed-Solomon</h4>
+<h4 style="margin-bottom: 0.25px;">Reed-Solomon (Clause 91)</h4>
 Reed-Solomon (RS) is a ‘stronger’ FEC and is most prevalent. When transmitting, these symbols are distributed round robin to FEC lanes which are then mapped to PMD lanes. When receiving, the incoming symbols are used to assemble the codeword, and this is where the parity bits are used to perform error correction. Once done, the data is sent on for next processing.<br>RS-FEC can make corrections only when the number of bits in error does not exceed limits. <b>If the number of parity symbols is 2t, then RS-FEC can correct up to t symbols</b><br>
 Has two kinds based on the link modulation:
 <dl>
@@ -42,7 +42,7 @@ Has two kinds based on the link modulation:
 </dl>
 
 
-<h4 style="margin-bottom: 0.25px;">Firecode</h4>
+<h4 style="margin-bottom: 0.25px;">Firecode (Clause 74)</h4>
 Firecode (FC), also known as BASE-R or Clause 74 FEC, is used in 25G interfaces only and is less widely used than RS-FEC. The primary use case for FC-FEC is over short twinax cables where the propagation latency is less significant.<br>It can also be used at 25G and 50G with fiber optic connections when the preferred RS-FEC is not available. For 25G and 50G-2 links, if latency is an important factor to optimize, it is recommended to engineer the links to allow running with FEC disabled (Use twinax cables designated as CA-N).<br>
 When transmitting with FC-FEC enabled, the PHY will again encode the data into blocks, adding parity bits.
 
