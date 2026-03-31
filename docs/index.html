@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>transceivers.net | Layer 1 of the OSI</title>
+    <title>tachyphos.net</title>
     
     <!-- External Dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
@@ -13,49 +13,51 @@
 </head>
 <body>
     <header>
-    <div class="header-main-row">
-        <div class="header-left">
-            <div class="site-logo" onclick="app.loadPage('home')">TRANSCEIVERS.NET | Layer 1 of the OSI</div>
-        </div>
-        <div class="header-right">
-            <div class="search-bar">
-                <input type="text" id="site-search" placeholder="Search pages..." autocomplete="off">
-                <div id="search-results" class="search-results-popup"></div>
+        <div class="header-main-row">
+            <div class="header-left">
+                <div class="site-logo" onclick="app.loadPage('main')">tachyphos.net</div>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
+                    <input type="text" id="site-search" placeholder="Search pages..." autocomplete="off">
+                    <div id="search-results" class="search-results-popup"></div>
+                </div>
             </div>
         </div>
+
+        <nav class="nav-bar-strip">
+            <ul id="top-nav-items" class="horizontal-nav-list"> </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <nav>
+            <div id="status-panel" class="nav-section">
+                <h4>Have feedback?</h4>
+                <div class="status-card">
+                    <div class="status-row"><span>Bug/RFE:</span> <span ><a target="_blank" rel="noopener noreferrer" href="https://github.com/jmparikh/transceivers.net/issues" class="tag-green">File an Issue</a></span></div>
+                    <div class="status-row"><span>Feedback:</span> <strong>rx@tachyphos.net</strong></div>
+                    <div class="status-row"><span></span>(rx-only)</div>
+                </div>
+            </div>
+            <div id="toc-panel" class="nav-section">
+                <h4>On This Page</h4>
+                <ul id="auto-nav" class="nav-list"></ul>
+            </div>
+            <div class="nav-section">
+                <h4>Sub Modules</h4>
+                <ul id="sub-library-links" class="nav-list"></ul>
+            </div>
+        </nav>
+        <!-- Uncomment this to enable the ancient home button -->
+        <!-- <span id="global-controls"></span> -->
+        <main id="main-content"></main>
     </div>
 
-    <nav class="nav-bar-strip">
-        <ul id="top-nav-items" class="horizontal-nav-list"> </ul>
-    </nav>
-</header>
-
-<div class="container">
-    <nav>
-        <div id="status-panel" class="nav-section">
-            <h4>Environment Stats</h4>
-            <div class="status-card">
-                <div class="status-row"><span>Status:</span> <span class="tag-green">Online</span></div>
-                <div class="status-row"><span>Version:</span> <strong>0.0.1</strong></div>
-                <div class="status-row"><span>Last Update:</span> 2 mins ago</div>
-            </div>
-        </div>
-        <div id="toc-panel" class="nav-section">
-            <h4>On This Page</h4>
-            <ul id="auto-nav" class="nav-list"></ul>
-        </div>
-        <div class="nav-section">
-            <h4>Sub Modules</h4>
-            <ul id="sub-library-links" class="nav-list"></ul>
-        </div>
-    </nav>
-    <main id="main-content"></main>
-</div>
-
-<footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-content">
-            <span class="footer-credits">© 2026 transceivers.net | Layer 1 Documentation Portal</span>
-            <span class="footer-text">Layer-1 of the OSI</span>
+            <span class="footer-credits">© 2026 tachyphos.net</span>
+            <span class="footer-text">Light Speed!</span>
             <span class="footer-credits">Created by Jainam Parikh and w/some AI help :)</span>
         </div>
     </footer>
