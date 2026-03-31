@@ -4,10 +4,16 @@
  * Modular architecture designed to handle Hybrid (Markdown + HTML) files.
  */
 const app = {
-    currentPage: 'home',
+    currentPage: 'main',
     
     // Config: Defines page metadata. 
     pages: {
+        main: {
+            title: "What is Layer 1?",
+            subtitle: "The most-most-most-most important Layer in the OSI",
+            type: "markdown", // Treat as Markdown; Marked.js handles embedded HTML automatically
+            url: "./main.md" 
+        },
         home: {
             title: "What are transceivers?",
             subtitle: "A - Z of optics",
@@ -99,6 +105,7 @@ const app = {
         }
         
         this.renderTopNav(); // Call new nav renderer
+        this.renderHomeButton();
         this.initSearch();   // Initialize search engine
         this.loadPage(this.currentPage);
     },
@@ -447,7 +454,23 @@ const app = {
 
         // 5. Update the Sub-Module list to show a "Back" link (adds a button to go back to parent page)
         this.renderSubLibrary(this.pages[parentId], true); 
-    }
+    },
+
+    renderHomeButton: function() {
+        const container = document.getElementById('global-controls');
+        if (!container) return;
+
+        const homeBtn = document.createElement('button');
+        homeBtn.className = 'home-btn';
+        homeBtn.innerHTML = 'Home';
+        
+        // Use your existing logic to load 'home' (which points to main.md)
+        homeBtn.onclick = () => {
+            this.loadPage('main'); 
+        };
+
+        container.appendChild(homeBtn);
+    },
 };
 
 document.addEventListener('DOMContentLoaded', () => app.init());
